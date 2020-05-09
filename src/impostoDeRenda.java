@@ -55,8 +55,14 @@ public class impostoDeRenda {
 		impostoDevido = impostoBruto - deducao;
 		
 		System.out.println("DEDUÇÕES:");
-		System.out.printf("Máximo dedutível: %.2f%n", deducao);
+		System.out.printf("Máximo dedutível: %.2f%n", maxDedutivel);
 		System.out.printf("Gastos dedutíveis: %.2f%n", gastos);
+		System.out.println();
+		System.out.println("RESUMO:");
+		System.out.printf("Imposto bruto total: %.2f%n", impostoBruto);
+		System.out.printf("Abatimento: %.2f%n", deducao);
+		System.out.printf("Imposto devido: %.2f%n", impostoDevido);
+		
 		sc.close();
 
 	}
