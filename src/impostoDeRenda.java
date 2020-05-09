@@ -8,7 +8,7 @@ public class impostoDeRenda {
 		Scanner sc = new Scanner(System.in);
 
 		double salario, servico, capital, medico, educacional, impostoSal, impostoServ, impostoGcap, impostoBruto,
-				impostoDevido, deducao;
+				impostoDevido, gastos, maxDedutivel, deducao;
 
 		// Leitura dos dados
 		System.out.print("Renda anual com salário: ");
@@ -41,7 +41,22 @@ public class impostoDeRenda {
 		System.out.printf("Imposto sobre serviços: %.2f%n", impostoServ);
 		impostoGcap = capital * 0.2;
 		System.out.printf("Imposto sobre ganho de capital: %.2f%n", impostoGcap);
-
+		System.out.println();
+		
+		impostoBruto = impostoSal + impostoServ + impostoGcap;
+		gastos = medico + educacional;
+		maxDedutivel = impostoBruto * 0.3;
+		if (maxDedutivel >= gastos) {
+			deducao = gastos;
+		}
+		else {
+			deducao = maxDedutivel;
+		}
+		impostoDevido = impostoBruto - deducao;
+		
+		System.out.println("DEDUÇÕES:");
+		System.out.printf("Máximo dedutível: %.2f%n", deducao);
+		System.out.printf("Gastos dedutíveis: %.2f%n", gastos);
 		sc.close();
 
 	}
